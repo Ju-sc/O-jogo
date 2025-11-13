@@ -20,7 +20,7 @@ def limpar_tela():
            
 while continuamenu==True:
     limpar_tela()
-    entrada = (input("\nDeseja criar uma sala ou entrar em uma sala?\n1- Criar uma sala\n2- Entrar em uma sala existente\nR:"))
+    entrada = (input("\n AAAAAADeseja criar uma sala ou entrar em uma sala?\n1- Criar uma sala\n2- Entrar em uma sala existente\nR:"))
     if entrada == '1':
         continuamenu=False
         limpar_tela()
@@ -139,4 +139,3 @@ elif player2 == 1:
                         r.delete(sala,"p2",jgp2)
                     break
            
-
