@@ -20,8 +20,8 @@ continuamenu= True
 def limpar_tela():
     os.system('cls' if os.name == 'nt' else 'clear')
 
-print("\nJJJOGO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-time.sleep(0.5)
+"""print("\nJJJOGO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+time.sleep(0.)
 limpar_tela()
 print("\n\n!!!!!!!JJJOGO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 time.sleep(0.5)
@@ -55,7 +55,7 @@ time.sleep(0.5)
 limpar_tela()
 print("\nOGOJJJ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 time.sleep(0.5)
-limpar_tela()
+limpar_tela()"""
 
            
 while continuamenu==True:
@@ -108,37 +108,35 @@ if player1 == 1:
 
         elif jgp1 != "":
             limpar_tela()
-            aguardandocontinua=True
+            
             continua= False
             r.hset(sala,"p1",jgp1)
             r.hset(sala,"p2","")
 
-            while aguardandocontinua == True:
-                print("\nAguardando jogada do player 2...🕝")
-                time.sleep(0.5)
-                limpar_tela()
-                print("\nAguardando jogada do player 2...🕑")
-                time.sleep(0.5)
-                limpar_tela()
-                print("\nAguardando jogada do player 2...🕜")
-                time.sleep(0.5)
-                limpar_tela()
-                print("\nAguardando jogada do player 2...🕐") 
-                time.sleep(0.5)
-                limpar_tela()
-                print("\nAguardando jogada do player 2...🕧")
-                time.sleep(0.5)
-                limpar_tela()
-                print("\nAguardando jogada do player 2...🕛")    
-                time.sleep(0.5)
-                limpar_tela()
+            print("\nAguardando jogada do player 2...🕝")
+            time.sleep(0.5)
+            limpar_tela()
+            print("\nAguardando jogada do player 2...🕑")
+            time.sleep(0.5)
+            limpar_tela()
+            print("\nAguardando jogada do player 2...🕜")
+            time.sleep(0.5)
+            limpar_tela()
+            print("\nAguardando jogada do player 2...🕐") 
+            time.sleep(0.5)
+            limpar_tela()
+            print("\nAguardando jogada do player 2...🕧")
+            time.sleep(0.5)
+            limpar_tela()
+            print("\nAguardando jogada do player 2...🕛")    
+            time.sleep(0.5)
+            limpar_tela()
 
             while True:
                 dados = r.hgetall(sala)
                 p1 = dados["p1".encode()].decode()
                 p2 = dados["p2".encode()].decode()
                 if p1 != "" and p2 != "":
-                    aguardandocontinua= False
                     for i in range(1,20):
                         num1 = random.randint(1, 100)
                         num2 = random.randint(1, 100)
@@ -181,37 +179,35 @@ elif player2 == 1:
 
 
         elif jgp2 != "":
-            aguardandocontinua= True
             limpar_tela()
             continua= False
             r.hset(sala,"p2",jgp2)
 
-            while aguardandocontinua == True:
-                print("\nAguardando jogada do player 1...🕝")
-                time.sleep(0.5)
-                limpar_tela()
-                print("\nAguardando jogada do player 1...🕑")
-                time.sleep(0.5)
-                limpar_tela()
-                print("\nAguardando jogada do player 1...🕜")
-                time.sleep(0.5)
-                limpar_tela()
-                print("\nAguardando jogada do player 1...🕐") 
-                time.sleep(0.5)
-                limpar_tela()
-                print("\nAguardando jogada do player 1...🕧")
-                time.sleep(0.5)
-                limpar_tela()
-                print("\nAguardando jogada do player 1...🕛")    
-                time.sleep(0.5)
-                limpar_tela()
-
+            
+            print("\nAguardando jogada do player 2...🕝")
+            time.sleep(0.5)
+            limpar_tela()
+            print("\nAguardando jogada do player 2...🕑")
+            time.sleep(0.5)
+            limpar_tela()
+            print("\nAguardando jogada do player 2...🕜")
+            time.sleep(0.5)
+            limpar_tela()
+            print("\nAguardando jogada do player 2...🕐") 
+            time.sleep(0.5)
+            limpar_tela()
+            print("\nAguardando jogada do player 2...🕧")
+            time.sleep(0.5)
+            limpar_tela()
+            print("\nAguardando jogada do player 2...🕛")    
+            time.sleep(0.5)
+            limpar_tela()
+            
             while True:
                 dados = r.hgetall(sala)
                 p1 = dados["p1".encode()].decode()
                 p2 = dados["p2".encode()].decode()
                 if p1 != "" and p2 != "":
-                    aguardandocontinua = False
                     for i in range(1,20):
                         num1 = random.randint(1, 100)
                         num2 = random.randint(1, 100)
@@ -228,7 +224,9 @@ elif player2 == 1:
                         r.delete(sala,"p1",jgp1)
                         r.delete(sala,"p2",jgp2)
                     elif pl2int > p1int:
-                        print("p2 venceu!")
+                        print("╔═══════════════════╗")
+                        print("       p2 venceu!")
+                        print("╚═══════════════════╝")
                         print(p1int,"<",pl2int)
                         r.delete(sala,"p1",jgp1)
                         r.delete(sala,"p2",jgp2)
