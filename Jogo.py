@@ -28,10 +28,8 @@ def menu():
         entrada = (input("\nDeseja criar uma sala ou entrar em uma sala?\n1- Criar uma sala\n2- Entrar em uma sala existente\nR:"))
         if entrada == '1':
             continuamenu=False
-            limpar_tela()
             while True:
-
-
+                limpar_tela()
                 sala = input("\nNome da sala\nR:")
 
                 if r.exists(sala):
@@ -49,6 +47,7 @@ def menu():
             continuamenu=False
             limpar_tela()
             while True:
+                limpar_tela()
                 print("OBS:\nAo tentar entrar na sala, se acontecer de não reconhecer o 'p1'\né provável que a sala não exista.")
                 sala = (input("\nDigite o número da sala que você vai entrar\nR:"))
 
